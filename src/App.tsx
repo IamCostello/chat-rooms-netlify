@@ -72,9 +72,11 @@ function App() {
               </Button>
             )}
             {user && <Button onClick={handleSignOut}>Logout</Button>}
-            <Button onClick={toggleColorMode}>
-              {colorMode === "dark" ? <MoonIcon /> : <SunIcon />}
-            </Button>
+            {!roomName && (
+              <Button onClick={toggleColorMode}>
+                {colorMode === "dark" ? <MoonIcon /> : <SunIcon />}
+              </Button>
+            )}
           </Stack>
         </Flex>
         {roomName && <Spacer />}

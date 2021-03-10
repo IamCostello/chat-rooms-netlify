@@ -12,6 +12,8 @@ interface ChatroomProps {
   roomName: string;
 }
 
+// redorect on error from validation
+
 export const Chatroom: FC<ChatroomProps> = ({ roomName }) => {
   const messagesRef = firestore.collection(roomName);
   const query = messagesRef.orderBy("createdAt", "desc").limit(25);
