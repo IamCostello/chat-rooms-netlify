@@ -10,10 +10,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { auth } from "./config/firebase";
-import { Container, Flex, Heading, Stack } from "@chakra-ui/layout";
+import { Box, Container, Flex, Heading, Stack } from "@chakra-ui/layout";
 import { CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { LoginForm } from "./components/LoginForm";
-import "./app.css";
 
 export type Massage = {
   id: string;
@@ -42,7 +41,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <Box height="100%" minHeight="100vh">
       <Flex direction="column" height="100vh" justify="space-between">
         <Flex
           as="nav"
@@ -95,7 +94,7 @@ function App() {
             ))}
         </Container>
       </Flex>
-    </div>
+    </Box>
   );
 }
 
