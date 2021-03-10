@@ -23,7 +23,7 @@ export const Chatroom: FC<ChatroomProps> = ({ roomName }) => {
 
   useEffect(() => {
     document.title = roomName;
-  }, []);
+  }, [roomName]);
 
   const handleScrollToBottom = () => {
     if (scrollToBottom && scrollToBottom.current) {
