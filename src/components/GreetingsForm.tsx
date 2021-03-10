@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { Container, Heading, Stack } from "@chakra-ui/layout";
 import { Input, Text } from "@chakra-ui/react";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 interface GreetingsFormProps {
   onRoomEnter: (onRoomEnter: string) => void;
@@ -9,6 +9,10 @@ interface GreetingsFormProps {
 
 export const GreetingsForm: FC<GreetingsFormProps> = ({ onRoomEnter }) => {
   const [roomName, setroomName] = useState("");
+
+  useEffect(() => {
+    document.title = "Tell me your interest";
+  }, []);
 
   return (
     <Container

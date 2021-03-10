@@ -21,6 +21,10 @@ export const Chatroom: FC<ChatroomProps> = ({ roomName }) => {
 
   const scrollToBottom = useRef<HTMLInputElement>(null);
 
+  useEffect(() => {
+    document.title = roomName;
+  }, []);
+
   const handleScrollToBottom = () => {
     if (scrollToBottom && scrollToBottom.current) {
       scrollToBottom.current.scrollIntoView({ behavior: "auto" });

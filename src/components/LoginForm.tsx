@@ -1,6 +1,6 @@
 import { Container, Heading, Stack } from "@chakra-ui/layout";
 import firebase from "firebase";
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { auth } from "../config/firebase";
 import { LoginButton } from "./LoginButton";
 import { Text } from "@chakra-ui/react";
@@ -11,6 +11,10 @@ export const LoginForm: FC = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   };
+
+  useEffect(() => {
+    document.title = "Login to start sharing ideas";
+  }, []);
 
   return (
     <Container
